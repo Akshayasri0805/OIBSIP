@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        animation: gradientAnimation 10s ease infinite;
+      }
+  
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+  
+        50% {
+          background-position: 100% 50%;
+        }
+  
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+  
+      h1 {
+        font-family: Arial, sans-serif;
+        font-size: 4rem;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+  
+      h1 {
+        text-align: center;
+      }
+  
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    .form {
+      padding: 20px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+
+    .form input[type="number"] {
+      width: 100px;
+      padding: 5px;
+    }
+
+    .form select {
+      padding: 5px;
+    }
+
+    .form button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Temperature Converter</h1>
+
+  <div class="container">
+    <form class="form">
+      <input type="number" id="temperature" placeholder="Enter temperature">
+      <select id="unit">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+      </select>
+      <button type="button" onclick="convertTemperature()">Convert</button>
+    </form>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function convertTemperature() {
+      var temperature = parseFloat(document.getElementById('temperature').value);
+      var unit = document.getElementById('unit').value;
+      var resultElement = document.getElementById('result');
+      
+      if (unit === 'celsius') {
+        var convertedTemperature = (temperature * 9/5) + 32;
+        resultElement.innerHTML = temperature + "°C is equal to " + convertedTemperature + "°F";
+      } else if (unit === 'fahrenheit') {
+        var convertedTemperature = (temperature - 32) * 5/9;
+        resultElement.innerHTML = temperature + "°F is equal to " + convertedTemperature + "°C";
+      }
+    }
+  </script>
+</body>
+
+</html>
