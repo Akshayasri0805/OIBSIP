@@ -1,0 +1,40 @@
+.background{
+    background: linear-gradient(to right,#403b4a9d, #e7e9bb);
+    padding-left: 20%;
+    border-top: 5px; 
+    padding-bottom:10%;
+    border-bottom:5px;
+
+}
+    h1{
+    color:#002B5B;
+    align-items: center;
+    text-decoration:underline ;
+
+
+}
+b{
+    color:#d3d591; 
+
+}
+#bold1{
+    color:hsl(222, 90%, 48%);
+
+}
+li{
+    color:#060606; 
+
+}
+i{
+    color:#060606; 
+}
+#image{
+    width: 300;
+    height: 300;
+    float: right;
+    padding: bottom 30px;
+    padding-top: 0%; 
+   
+    
+}
+
